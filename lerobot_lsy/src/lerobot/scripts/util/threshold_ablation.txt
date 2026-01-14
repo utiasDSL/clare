@@ -1,0 +1,20 @@
+\begin{table}[tbh!]
+    \centering
+    \begin{tabular}{lcccc}
+        \toprule
+        Threshold~$\gamma$ & \# Adapters & AUC $\uparrow$ & FWT $\uparrow$ & NBT $\downarrow$ \\
+        \midrule
+        0 & 60$^{\pm \text{0.0}}$ & 65.38$^{\pm \text{2.68}}$ & 66.53$^{\pm \text{2.18}}$ & 1.70$^{\pm \text{1.20}}$ \\
+        2.5 & 58$^{\pm \text{0.0}}$ & 66.71$^{\pm \text{1.29}}$ & 66.07$^{\pm \text{1.32}}$ & -0.80$^{\pm \text{0.76}}$ \\
+        5.0 & 55$^{\pm \text{0.3}}$ & 62.33$^{\pm \text{2.86}}$ & 62.53$^{\pm \text{3.25}}$ & 0.28$^{\pm \text{1.07}}$ \\
+        7.5 & 46$^{\pm \text{0.0}}$ & 58.59$^{\pm \text{1.89}}$ & 59.17$^{\pm \text{2.25}}$ & 0.65$^{\pm \text{0.76}}$ \\
+        10 & 37$^{\pm \text{0.0}}$ & 55.95$^{\pm \text{4.94}}$ & 56.87$^{\pm \text{4.75}}$ & 1.10$^{\pm \text{0.35}}$ \\
+        12.5 & 28$^{\pm \text{0.0}}$ & 58.77$^{\pm \text{3.17}}$ & 59.24$^{\pm \text{2.93}}$ & -0.81$^{\pm \text{0.55}}$ \\
+        15 & 22$^{\pm \text{0.7}}$ & 59.97$^{\pm \text{3.47}}$ & 60.18$^{\pm \text{3.38}}$ & -0.52$^{\pm \text{0.29}}$ \\
+        17.5 & 17$^{\pm \text{0.3}}$ & 56.73$^{\pm \text{0.69}}$ & 56.86$^{\pm \text{0.64}}$ & -0.17$^{\pm \text{1.13}}$ \\
+        20 & 16$^{\pm \text{0.0}}$ & 56.63$^{\pm \text{4.06}}$ & 56.59$^{\pm \text{3.63}}$ & -0.02$^{\pm \text{1.17}}$ \\
+        \bottomrule
+    \end{tabular}
+    \caption{Expansion threshold ablation.}
+    \label{tab:threshold_ablation}
+\end{table}

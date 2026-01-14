@@ -1,0 +1,32 @@
+[workspace]
+preview = ["pixi-build"]
+authors = ["Daniel San Jose Pro <sanjose.daniel@gmail.com>"]
+channels = ["https://fast.prefix.dev/conda-forge"]
+name = "lerobot-env"
+platforms = ["linux-64"]
+
+[dependencies]
+python = "3.11.*"
+compilers = "*"
+cmake = "*"
+pkg-config = "*"
+make = "*"
+ninja = "*"
+typing_inspect = ">=0.9.0,<0.10"
+libstdcxx-ng = ">=12.2.0"
+pynput = "*"
+rerun-sdk = "==0.22.0"
+ffmpeg = "<8"
+
+[target.linux.dependencies]
+libgl-devel = "*"
+
+[pypi-dependencies]
+lerobot = { path = ".", editable = true, extras = ["smolvla", "pusht"] }
+pre-commit = "*"
+ruff = "*"
+matplotlib = ">=3.10.6, <4"
+# torch = { version = "<2.2.0", index = "https://download.pytorch.org/whl/cu118" }
+# torchvision = { version = "<0.17.0", index = "https://download.pytorch.org/whl/cu118" }
+# numpy = { version = "<2.0.0" }
+

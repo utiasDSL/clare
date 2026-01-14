@@ -1,0 +1,12 @@
+transformers==4.55.0
+accelerate==1.9.0
+evaluate
+tqdm
+datasets==4.0.0
+diffusers==0.34.0
+Pillow
+huggingface_hub
+safetensors
+ipykernel
+ipywidgets
+wandb==0.21.0

@@ -1,0 +1,10 @@
+peft
+accelerate
+transformers
+datasets==2.18.0
+evaluate
+hnswlib
+pandas
+tqdm
+huggingface_hub
+wandb

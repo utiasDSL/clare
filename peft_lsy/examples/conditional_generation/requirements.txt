@@ -1,0 +1,8 @@
+transformers
+accelerate
+evaluate
+deepspeed
+tqdm
+datasets
+safetensors
+scikit-learn

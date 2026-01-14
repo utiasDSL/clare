@@ -1,0 +1,21 @@
+{
+    "batch_size": 64,
+    "steps": 40000,
+    "save_freq": 5000,
+    "log_freq": 500,
+    "eval_freq": 500,
+    "dataset": {
+        "repo_id": "danielsanjosepro/organize_drawer_v1"
+    },
+    "policy": {
+        "repo_id": "danielsanjosepro/ditmeanflow_organize_drawer_v2",
+        # "scheduler_warmup_steps": 1000,
+        # "optimizer_lr": 8e-5,
+        "type": "ditflow"
+    },
+    "wandb": {
+        "enable": true,
+        "project": "master_thesis"
+    }
+}
+
