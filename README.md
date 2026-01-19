@@ -12,7 +12,7 @@
 
 The official code repository for *"CLARE: Continual Learning for Vision-Language-Action Models via Autonomous Adapter Routing and Expansion"*.
 
-<img src="clare_overview.png" alt="CLARE"/>
+<img src="clare_overview.png" alt="CLARE" width="50%"/>
 
 ## Abstract
 
