@@ -82,10 +82,10 @@ class PEFTTrainPipelineConfig(TrainPipelineConfig):
     peft_cfg_path: Path | None = None
     peft_weight_path: Path | None = None
 
-    detect_disctribution_shift_steps:int = 200
-    detect_disctribution_shift_batch_size: int = 32
-    detect_disctribution_shift_num_workers: int = 16
-    detect_disctribution_shift_log_freq:int = 10
+    detect_distribution_shift_steps:int = 200
+    detect_distribution_shift_batch_size: int = 32
+    detect_distribution_shift_num_workers: int = 16
+    detect_distribution_shift_log_freq:int = 10
     
     train_discriminators_steps: int = 2000
     train_discriminators_batch_size: int = 32
@@ -148,13 +148,13 @@ def detect_distribution_shift(cfg: PEFTTrainPipelineConfig,
             infer_metrics[f"z_score_{key}"] = AverageMeter(f"z_score_{key}", ":.3f")
     
     detect_tracker = MetricsTracker(
-        cfg.detect_disctribution_shift_batch_size, dataset.num_frames, dataset.num_episodes, infer_metrics, initial_step=0
+        cfg.detect_distribution_shift_batch_size, dataset.num_frames, dataset.num_episodes, infer_metrics, initial_step=0
     )
 
     detect_dataloader = torch.utils.data.DataLoader(
         dataset,
-        num_workers=cfg.detect_disctribution_shift_num_workers,
-        batch_size=cfg.detect_disctribution_shift_batch_size,
+        num_workers=cfg.detect_distribution_shift_num_workers,
+        batch_size=cfg.detect_distribution_shift_batch_size,
         shuffle=True,
         sampler=None,
         pin_memory=device.type != "cpu",
@@ -170,7 +170,7 @@ def detect_distribution_shift(cfg: PEFTTrainPipelineConfig,
     step = 0
 
     # infer on new dataset only for 1 epoch
-    for _ in range(cfg.detect_disctribution_shift_steps):
+    for _ in range(cfg.detect_distribution_shift_steps):
         batch = next(detect_iter)
         for key in batch:
             if isinstance(batch[key], torch.Tensor):
@@ -210,7 +210,7 @@ def detect_distribution_shift(cfg: PEFTTrainPipelineConfig,
 
         step += 1
         detect_tracker.step()
-        is_log_step = cfg.detect_disctribution_shift_log_freq > 0 and step % cfg.detect_disctribution_shift_log_freq == 0
+        is_log_step = cfg.detect_distribution_shift_log_freq > 0 and step % cfg.detect_distribution_shift_log_freq == 0
 
         # if is_log_step:
         #     logging.info(detect_tracker)

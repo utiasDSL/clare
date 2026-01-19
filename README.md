@@ -1,6 +1,18 @@
 # CLARE: Continual Learning for Vision-Language-Action Models via Autonomous Adapter Routing and Expansion
 
-This is the official anonymous code repository for the paper **"CLARE: Continual Learning for Vision-Language-Action Models via Autonomous Adapter Routing and Expansion"**.
+[Ralf Römer](https://ralfroemer.com)<sup>1,\*</sup>,
+[Yi Zhang](https://www.linkedin.com/in/yi-zhang-01a8aa245/)<sup>1,\*</sup>,
+[Angela P. Schoellig](https://www.dynsyslab.org/prof-angela-schoellig/)<sup>1</sup>,
+
+<sup>1</sup>Technical University of Munich
+
+[![arXiv](https://img.shields.io/badge/arXiv-2510.09459-red)](https://arxiv.org/abs/2601.09512)
+[![Website](https://img.shields.io/badge/Website-FIPER-blue)](https://tum-lsy.github.io/clare/)
+[![PyTorch](https://img.shields.io/badge/Python-PyTorch-orange.svg)](https://www.pytorch.org)
+
+The official code repository for *"CLARE: Continual Learning for Vision-Language-Action Models via Autonomous Adapter Routing and Expansion"*.
+
+<img src="clare_overview.png" alt="CLARE"/>
 
 ## Abstract
 
@@ -24,33 +36,27 @@ This codebase is built on top of two open-source frameworks from Hugging Face:
 
 ### Setup
 
-1. **Clone the repository**
-   ```bash
-   git clone <repository-url>
-   cd clare
-   ```
-
-2. **Create and activate a conda environment**
+1. **Create and activate a conda environment**
    ```bash
    conda create -n clare python=3.10
    conda activate clare
    ```
 
-3. **Install PEFT-LSY in editable mode**
+2. **Install PEFT-LSY in editable mode**
    ```bash
    cd peft_lsy
    pip install -e .
    cd ..
    ```
 
-4. **Install LeRobot-LSY in editable mode**
+3. **Install LeRobot-LSY in editable mode**
    ```bash
    cd lerobot_lsy
    pip install -e .
    cd ..
    ```
 
-5. **Install additional dependencies** (if needed)
+4. **Install additional dependencies** (if needed)
    ```bash
    pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
    ```

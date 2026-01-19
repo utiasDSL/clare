@@ -17,12 +17,12 @@ from .diffusion.configuration_diffusion import DiffusionConfig as DiffusionConfi
 from .diffusion_transformer.configuration_diffusion_transformer import DiffusionTransformerConfig as DiffusionTransformerConfig
 from .dit.configuration_dit import DiTConfig as DiTConfig
 from .dit_mt.configuration_dit_mt import DiTMTConfig as DiTMTConfig
-from .dit_update_mt.configuration_dit_update_mt import DiTUpdateMTConfig as DiTUpdateMTConfig
-from .dit_flow_update_mt.configuration_dit_flow_update_mt import DiTFlowUpdateMTConfig as DiTFlowUpdateMTConfig
+# from .dit_update_mt.configuration_dit_update_mt import DiTUpdateMTConfig as DiTUpdateMTConfig
+# from .dit_flow_update_mt.configuration_dit_flow_update_mt import DiTFlowUpdateMTConfig as DiTFlowUpdateMTConfig
 from .dit_flow.configuration_dit_flow import DiTFlowConfig as DiTFlowConfig
 from .dit_flow_mt.configuration_dit_flow_mt import DiTFlowMTConfig as DiTFlowMTConfig
 from .pi0.configuration_pi0 import PI0Config as PI0Config
 from .smolvla.configuration_smolvla import SmolVLAConfig as SmolVLAConfig
-from .smolvla_image_only.configuration_smolvla_image_only import SmolVLAImageConfig as SmolVLAImageConfig
+# from .smolvla_image_only.configuration_smolvla_image_only import SmolVLAImageConfig as SmolVLAImageConfig
 from .tdmpc.configuration_tdmpc import TDMPCConfig as TDMPCConfig
 from .vqbet.configuration_vqbet import VQBeTConfig as VQBeTConfig

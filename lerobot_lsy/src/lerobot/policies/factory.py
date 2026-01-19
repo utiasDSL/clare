@@ -32,19 +32,19 @@ from lerobot.policies.diffusion_transformer.configuration_diffusion_transformer 
 from lerobot.policies.dit.configuration_dit import DiTConfig
 from lerobot.policies.dit_flow.configuration_dit_flow import DiTFlowConfig
 from lerobot.policies.dit_flow_mt.configuration_dit_flow_mt import DiTFlowMTConfig
-from lerobot.policies.dit_meanflow.configuration_dit_meanflow import DiTMeanFlowConfig
+# from lerobot.policies.dit_meanflow.configuration_dit_meanflow import DiTMeanFlowConfig
 from lerobot.policies.dit_mt.configuration_dit_mt import DiTMTConfig
-from lerobot.policies.dit_update_mt.configuration_dit_update_mt import DiTUpdateMTConfig as DiTUpdateMTConfig
-from lerobot.policies.dit_flow_update_mt.configuration_dit_flow_update_mt import DiTFlowUpdateMTConfig as DiTFlowUpdateMTConfig
+# from lerobot.policies.dit_update_mt.configuration_dit_update_mt import DiTUpdateMTConfig as DiTUpdateMTConfig
+# from lerobot.policies.dit_flow_update_mt.configuration_dit_flow_update_mt import DiTFlowUpdateMTConfig as DiTFlowUpdateMTConfig
 from lerobot.policies.pi0.configuration_pi0 import PI0Config
 from lerobot.policies.pi0fast.configuration_pi0fast import PI0FASTConfig
 from lerobot.policies.pretrained import PreTrainedPolicy
 from lerobot.policies.sac.configuration_sac import SACConfig
 from lerobot.policies.sac.reward_model.configuration_classifier import RewardClassifierConfig
 from lerobot.policies.smolvla.configuration_smolvla import SmolVLAConfig
-from lerobot.policies.smolvla_image_only.configuration_smolvla_image_only import SmolVLAImageConfig
+# from lerobot.policies.smolvla_image_only.configuration_smolvla_image_only import SmolVLAImageConfig
 from lerobot.policies.tdmpc.configuration_tdmpc import TDMPCConfig
-from lerobot.policies.unet_meanflow.configuration_unet_meanflow import UnetMeanFlowConfig
+# from lerobot.policies.unet_meanflow.configuration_unet_meanflow import UnetMeanFlowConfig
 from lerobot.policies.vqbet.configuration_vqbet import VQBeTConfig
 
 
