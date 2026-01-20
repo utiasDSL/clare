@@ -8,6 +8,7 @@
 
 [![arXiv](https://img.shields.io/badge/arXiv-2601.09512-red)](https://arxiv.org/abs/2601.09512)
 [![Website](https://img.shields.io/badge/Website-CLARE-blue)](https://tum-lsy.github.io/clare/)
+[![Hugging Face](https://img.shields.io/badge/🤗%20Hugging%20Face-Models%20%26%20Datasets-yellow)](https://huggingface.co/continuallearning)
 [![PyTorch](https://img.shields.io/badge/Python-PyTorch-orange.svg)](https://www.pytorch.org)
 
 The official code repository for *"CLARE: Continual Learning for Vision-Language-Action Models via Autonomous Adapter Routing and Expansion"*.
@@ -24,6 +25,14 @@ This codebase is built on top of two open-source frameworks from Hugging Face:
 
 - **`lerobot_lsy/`**: Modified version of [LeRobot](https://github.com/huggingface/lerobot) for designing, training, and fine-tuning Vision-Language-Action (VLA) models
 - **`peft_lsy/`**: Modified version of [PEFT](https://github.com/huggingface/peft) implementing the CLARE algorithm as a LoRA-compatible adapter
+
+## Pre-trained Checkpoints & Datasets
+
+We provide pre-trained model checkpoints and LIBERO datasets on 🤗 Hugging Face: **[huggingface.co/continuallearning](https://huggingface.co/continuallearning)**
+
+Available resources:
+- **`dit_mt_libero_90_pretrain`** and **`dit_flow_mt_libero_90_pretrain`**: DiT-EncDec and DiT-Dec base checkpoints pretrained on LIBERO-90
+- **`libero_10_image_task_0` to `libero_10_image_task_9`**: LIBERO-10 benchmark datasets
 
 ## Installation
 
@@ -195,25 +204,25 @@ python ./lerobot_lsy/src/lerobot/scripts/clare.py \
 - `--wandb.project`: W&B project name
 - `--log_freq`: Logging frequency
 
-## Environment Variables
+<!-- ## Environment Variables
 
 Set the following environment variables before running experiments:
 
 ```bash
 export DATASET_ROOT=/path/to/your/datasets
 export POLICY_ROOT=/path/to/your/pretrained/policy
-```
+``` -->
 
 ## Citation
 
 If you find this work useful, please consider citing our paper:
 
 ```bibtex
-@article{anonymous2025clare,
+@article{romer2025clare,
   title={CLARE: Continual Learning for Vision-Language-Action Models via Autonomous Adapter Routing and Expansion},
-  author={Anonymous},
-  journal={Under Review},
-  year={2025}
+  author={Ralf R{\"o}mer and Yi Zhang and Angela P. Schoellig},
+  journal={arXiv preprint arXiv:2601.09512},
+  year={2026}
 }
 ```
 
@@ -226,6 +235,6 @@ This project is released under the same license as the original LeRobot and PEFT
 This work builds upon:
 - [LeRobot](https://github.com/huggingface/lerobot) by Hugging Face
 - [PEFT](https://github.com/huggingface/peft) by Hugging Face
-- [LIBERO](https://lifelong-robot-learning.github.io/LIBERO/) benchmark
+- [LIBERO](https://github.com/Lifelong-Robot-Learning/LIBERO) by Bo Liu et al.
 
 We thank the authors of these projects for their open-source contributions.
