@@ -6,19 +6,17 @@
 
 <sup>1</sup>Technical University of Munich
 
-[![arXiv](https://img.shields.io/badge/arXiv-2510.09459-red)](https://arxiv.org/abs/2601.09512)
-[![Website](https://img.shields.io/badge/Website-FIPER-blue)](https://tum-lsy.github.io/clare/)
+[![arXiv](https://img.shields.io/badge/arXiv-2601.09512-red)](https://arxiv.org/abs/2601.09512)
+[![Website](https://img.shields.io/badge/Website-CLARE-blue)](https://tum-lsy.github.io/clare/)
 [![PyTorch](https://img.shields.io/badge/Python-PyTorch-orange.svg)](https://www.pytorch.org)
 
 The official code repository for *"CLARE: Continual Learning for Vision-Language-Action Models via Autonomous Adapter Routing and Expansion"*.
 
-<img src="clare_overview.png" alt="CLARE" width="50%"/>
+<p align="center">
+  <img src="clare_overview.png" alt="CLARE" width="50%"/>
+</p>
 
-## Abstract
-
-To teach robots complex manipulation tasks, it is now a common practice to fine-tune a pre-trained vision-language-action model (VLA) on task-specific data. However, since this recipe updates existing representations, it is unsuitable for long-term operation in the real world, where robots must continually adapt to new tasks and environments while retaining the knowledge they have already acquired. Existing continual learning methods for robotics commonly require storing previous data (exemplars), struggle with long task sequences, or rely on task identifiers for deployment.
-
-To address these limitations, we propose **CLARE**, a general, parameter-efficient framework for non-exemplar continual learning with VLAs. CLARE introduces lightweight modular adapters into selected feedforward layers and autonomously expands the model only where necessary when learning a new task, guided by layer-wise feature similarity. During deployment, an autoencoder-based routing mechanism dynamically activates the most relevant adapters without requiring task labels. Through extensive experiments on the LIBERO benchmark, we show that CLARE achieves high performance on new tasks without catastrophic forgetting of earlier tasks, significantly outperforming even exemplar-based methods.
+> Abstract: To teach robots complex manipulation tasks, it is now a common practice to fine-tune a pre-trained vision-language-action model (VLA) on task-specific data. However, since this recipe updates existing representations, it is unsuitable for long-term operation in the real world, where robots must continually adapt to new tasks and environments while retaining the knowledge they have already acquired. Existing continual learning methods for robotics commonly require storing previous data (exemplars), struggle with long task sequences, or rely on task identifiers for deployment. To address these limitations, we propose CLARE, a general, parameter-efficient framework for non-exemplar continual learning with VLAs. CLARE introduces lightweight modular adapters into selected feedforward layers and autonomously expands the model only where necessary when learning a new task, guided by layer-wise feature similarity. During deployment, an autoencoder-based routing mechanism dynamically activates the most relevant adapters without requiring task labels. Through extensive experiments on the LIBERO benchmark, we show that CLARE achieves high performance on new tasks without catastrophic forgetting of earlier tasks, significantly outperforming even exemplar-based methods.
 
 ## Project Structure
 
@@ -135,9 +133,8 @@ python ./lerobot_lsy/src/lerobot/scripts/clare.py \
     --seed=1000 \
     --job_name=clare_libero_10_task_0 \
     --output_dir=./outputs/clare_libero_10_task_0 \
-    --dataset.repo_id=libero_10_image_task_0 \
-    --dataset.root=$DATASET_ROOT/libero_10_image_task_0 \
-    --policy.path=$POLICY_ROOT/dit_mt_libero_90_pretrain \
+    --dataset.repo_id=continuallearning/libero_10_image_task_0 \
+    --policy.path=continuallearning/dit_mt_libero_90_pretrain \
     --policy.push_to_hub=false \
     --batch_size=32 \
     --num_workers=16 \
@@ -150,7 +147,7 @@ python ./lerobot_lsy/src/lerobot/scripts/clare.py \
     --eval_freq=200000 \
     --save_freq=20000 \
     --log_freq=100 \
-    --peft_cfg_path=$DATASET_ROOT/peft_config/clare_config.json \
+    --peft_cfg_path=./peft_lsy/config \
     --expand_threshold=10.00 \
     --detect_distribution_shift_steps=200 \
     --detect_distribution_shift_batch_size=32 \

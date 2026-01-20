@@ -83,6 +83,9 @@ class Discriminator(nn.Module, abc.ABC):
 class AutoencoderConfig(DiscriminatorConfig):
     hidden_dim: int = None
     latent_dim: int = None
+    use_lora: bool = False
+    lora_rank: int = 32
+    lora_alpha: int = 32
 
 
 class AutoEncoder(Discriminator):
