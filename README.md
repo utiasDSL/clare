@@ -70,7 +70,7 @@ Available resources:
 
 ## PEFT Configuration
 
-CLARE uses a custom PEFT adapter configuration. Below is an example configuration for the CLARE adapter:
+CLARE uses a custom PEFT adapter configuration. Below is an example configuration for the CLARE adapter for the DiT-Dec policy:
 
 ```json
 {
@@ -85,18 +85,16 @@ CLARE uses a custom PEFT adapter configuration. Below is an example configuratio
   "target_modules": ".*velocity_net.cond_proj",
   "inference_mode": true,
   "batch_first": true,
-  "num_learned_task": 1,
-  "feature_dim": 2574,
+  "num_learned_task": 0,
+  "feature_dim": 2576,
   "out_feature_dim": 512,
   "use_trainable_copy": false,
   "add_zero_init_conv_layer": false,
-  "structure": {
-    "_policy.dit_flow.velocity_net.cond_proj.0": [1, 1]
-  },
+  "structure": {},
   "discriminator_cfg": {
     "type": "autoencoder",
     "batch_first": true,
-    "feature_dim": 2574,
+    "feature_dim": 2576,
     "feature_fusion": false,
     "fused_feature_dim": null,
     "hidden_dim": 256,
@@ -139,7 +137,7 @@ The main training script is located at `lerobot_lsy/src/lerobot/scripts/clare.py
 
 ```bash
 python ./lerobot_lsy/src/lerobot/scripts/clare.py \
-    --seed=1000 \
+    --seed=42 \
     --job_name=clare_libero_10_task_0 \
     --output_dir=./outputs/clare_libero_10_task_0 \
     --dataset.repo_id=continuallearning/libero_10_image_task_0 \
@@ -212,6 +210,17 @@ Set the following environment variables before running experiments:
 export DATASET_ROOT=/path/to/your/datasets
 export POLICY_ROOT=/path/to/your/pretrained/policy
 ``` -->
+
+## Evaluation
+
+You can run evaluations in LIBERO by either directly using the latest LeRobot version, which includes LIBERO, or by installing LIBERO separately:
+```bash
+cd ..
+git clone git@github.com:ZhangYi1999/gym-libero.git
+cd gym-libero
+pip install -e .
+python test/test_gym_libero.py  # Validate installation
+```
 
 ## Citation
 
