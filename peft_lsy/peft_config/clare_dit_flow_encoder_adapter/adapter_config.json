@@ -1,0 +1,41 @@
+{
+  "peft_type": "CLARE",
+  "task_type": null,
+  "auto_mapping": {
+    "base_model_class": "PeftWrapperPolicy",
+    "parent_library": "__main__"
+  },
+  "base_model_name_or_path": null,
+  "revision": null,
+  "target_modules": ".*velocity_net.cond_proj",
+  "inference_mode": true,
+  "batch_first": true,
+  "num_learned_task": 0,
+  "feature_dim": 2576,
+  "out_feature_dim": 512,
+  "use_trainable_copy": false,
+  "add_zero_init_conv_layer": false,
+  "structure": {},
+  "discriminator_cfg": {
+    "type": "autoencoder",
+    "batch_first": true,
+    "feature_dim": 2576,
+    "feature_fusion": false,
+    "fused_feature_dim": null,
+    "hidden_dim": 256,
+    "latent_dim": 128,
+    "num_tokens": 16,
+    "lora_rank": 32,
+    "lora_alpha": 32,
+    "use_lora": false,
+    "use_momentum": true,
+    "momentum": 0.1,
+    "max_batches_tracked": 2000
+  },
+  "func_adapter_cfg": {
+    "hidden_dim": 1024,
+    "lora_rank": 32,
+    "lora_alpha": 32,
+    "use_lora": false
+  }
+}
