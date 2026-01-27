@@ -31,7 +31,7 @@ This codebase is built on top of two open-source frameworks from Hugging Face:
 We provide pre-trained model checkpoints and LIBERO datasets on 🤗 Hugging Face: **[huggingface.co/continuallearning](https://huggingface.co/continuallearning)**
 
 Available resources:
-- **`dit_mt_libero_90_pretrain`** and **`dit_flow_mt_libero_90_pretrain`**: DiT-EncDec and DiT-Dec base checkpoints pretrained on LIBERO-90
+- **`dit_flow_mt_libero_90_pretrain`** and **`dit_mt_libero_90_pretrain`**: DiT-Dec and DiT-EncDec base checkpoints pretrained on LIBERO-90 as described in the paper
 - **`libero_10_image_task_0` to `libero_10_image_task_9`**: LIBERO-10 benchmark datasets
 
 ## Installation
@@ -133,7 +133,7 @@ CLARE uses a custom PEFT adapter configuration. Below is an example configuratio
 
 ### Training with CLARE on LIBERO Benchmark
 
-The main training script is located at `lerobot_lsy/src/lerobot/scripts/clare.py`. Below is an example command for continual learning on the LIBERO-10 benchmark:
+The main training script is located at `lerobot_lsy/src/lerobot/scripts/clare.py`. Below is an example command for the first stage of continual learning on the LIBERO-10 benchmark:
 
 ```bash
 python ./lerobot_lsy/src/lerobot/scripts/clare.py \
@@ -170,6 +170,11 @@ python ./lerobot_lsy/src/lerobot/scripts/clare.py \
     --wandb.disable_artifact=true \
     --wandb.project=clare_experiments \
     --wandb.entity=<your-wandb-entity>
+```
+
+You can also run a full continual learning experiment for DiT-Dec using the provided bash script:
+```bash
+bash bash/dit_dec.sh
 ```
 
 ### Key Training Arguments
@@ -227,7 +232,7 @@ python test/test_gym_libero.py  # Validate installation
 If you find this work useful, please consider citing our paper:
 
 ```bibtex
-@article{romer2025clare,
+@article{clare,
   title={CLARE: Continual Learning for Vision-Language-Action Models via Autonomous Adapter Routing and Expansion},
   author={Ralf R{\"o}mer and Yi Zhang and Angela P. Schoellig},
   journal={arXiv preprint arXiv:2601.09512},
